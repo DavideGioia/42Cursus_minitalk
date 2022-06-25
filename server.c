@@ -30,6 +30,7 @@ static void sighandler(int sig)
     else
         c <<= 1;
 }
+
 int main()
 {
     struct sigaction sa;

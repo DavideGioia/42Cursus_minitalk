@@ -32,17 +32,19 @@ static void send_str(int pid, char *str)
                 kill(pid, SIGUSR2);
             usleep(100);
         }
+        usleep(100);
     }
 }
 
 int main(int argc, char **argv)
 {
+    if (argc != 3)
+        return (0);
 
     send_str(ft_atoi(argv[1]), argv[2]);
 
-    if (argc != 2)
-        return (0);
-
     while (1)
         pause();
+
+    return (0);
 }
